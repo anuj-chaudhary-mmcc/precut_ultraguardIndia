@@ -33,7 +33,7 @@
                </ul>
                <h2>Select Your <span>Car Model</span></h2>
                <div class="search-container">
-                  <input type="text" id="searchInput" placeholder="Search Model">
+                  <input type="text" id="searchInput" placeholder="Search <?php echo isset($brand) && $brand ? $brand->name . ' Models' : 'Models'; ?>">
                   <i class="fas fa-search"></i>
                </div>
             </div>

@@ -24,7 +24,7 @@
             <div class="Menu-line">
                <ul>
                   <li><a href="<?php echo base_url(); ?>">Home</a> - </li>
-                  <li><a href="<?php echo base_url(); ?>interior">Exterior</a> - </li>
+                  <li><a href="<?php echo base_url(); ?>exterior">Exterior</a> - </li>
                   <li>
                      <a href="#" class="active">
                      <?php echo isset($brand) && $brand ? $brand->name . ' Models' : 'All Car Models'; ?>

@@ -415,6 +415,7 @@ public function features($brand_id = null, $model_id = null)
 
         foreach ($features as &$feature) {
             $feature->images = $this->Feature_model->get_images($feature->id);
+            $feature->price = number_format($feature->price, 0, ',', '.');
         }
 
         $data['features'] = $features;
@@ -551,7 +552,8 @@ public function features_update($id)
             'name'         => $this->input->post('name'),
             'feature_name' => $this->input->post('feature_name'),
             'part_code'    => $this->input->post('part_code'),
-            'type'         => $this->input->post('type')
+            'type'         => $this->input->post('type'),
+            'price'        => $this->input->post('price')
         ];
 
         // Update feature in DB
@@ -639,6 +641,7 @@ public function features_update($id)
         
         foreach ($features as &$feature) {
             $feature->images = $this->Feature_model->get_images($feature->id);
+            $feature->price = number_format($feature->price, 2, '. ', ',');
         }
 
         $data['features'] = $features;

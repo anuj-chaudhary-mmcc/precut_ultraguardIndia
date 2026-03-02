@@ -179,6 +179,7 @@ class Precut extends CI_Controller
         $features = $this->Feature_model->get_features_by_model_and_type($model->id, $type_slug);
         foreach ($features as &$feature) {
             $feature->images = $this->Feature_model->get_images($feature->id);
+            $feature->price = number_format($feature->price, 2, '.', ',');
         }
 
         $data = [
@@ -269,5 +270,67 @@ class Precut extends CI_Controller
         ];
 
         $this->load->view('precut/exterior-models', $data);
+    }
+
+    // to search interior brand or models names from interior brand listing page
+    public function search_interior()
+    {
+        $keyword = $this->input->get('keyword');
+        
+        if (strlen($keyword) < 1) {
+            echo json_encode(['brands' => [], 'models' => []]);
+            return;
+        }
+
+        $this->db->select('brands.*, brands.name as brand_name, brands.image as brand_image');
+        $this->db->from('brands');
+        $this->db->join('models', 'models.brand_id = brands.id');
+        $this->db->join('features', 'features.model_id = models.id');
+        $this->db->where('features.type', 'interior');
+        $this->db->like('brands.name', $keyword);
+        $this->db->group_by('brands.id');
+        $brands = $this->db->get()->result();
+
+        $this->db->select('models.*, brands.name as brand_name, brands.image as brand_image');
+        $this->db->from('models');
+        $this->db->join('brands', 'brands.id = models.brand_id');
+        $this->db->join('features', 'features.model_id = models.id');
+        $this->db->where('features.type', 'interior');
+        $this->db->like('models.model_name', $keyword);
+        $this->db->group_by('models.id');
+        $models = $this->db->get()->result();
+
+        echo json_encode(['brands' => $brands, 'models' => $models]);
+    }
+
+    // to search exterior brand or models names from exterior brand listing page
+    public function search_exterior()
+    {
+        $keyword = $this->input->get('keyword');
+        
+        if (strlen($keyword) < 1) {
+            echo json_encode(['brands' => [], 'models' => []]);
+            return;
+        }
+
+        $this->db->select('brands.*, brands.name as brand_name, brands.image as brand_image');
+        $this->db->from('brands');
+        $this->db->join('models', 'models.brand_id = brands.id');
+        $this->db->join('features', 'features.model_id = models.id');
+        $this->db->where('features.type', 'exterior');
+        $this->db->like('brands.name', $keyword);
+        $this->db->group_by('brands.id');
+        $brands = $this->db->get()->result();
+
+        $this->db->select('models.*, brands.name as brand_name, brands.image as brand_image');
+        $this->db->from('models');
+        $this->db->join('brands', 'brands.id = models.brand_id');
+        $this->db->join('features', 'features.model_id = models.id');
+        $this->db->where('features.type', 'exterior');
+        $this->db->like('models.model_name', $keyword);
+        $this->db->group_by('models.id');
+        $models = $this->db->get()->result();
+
+        echo json_encode(['brands' => $brands, 'models' => $models]);
     }
 }

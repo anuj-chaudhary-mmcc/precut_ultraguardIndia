@@ -18,11 +18,11 @@
         <div class="Menu-line">
             <ul>
                 <li><a href="<?php echo base_url(); ?>">Home</a> - </li>
-                <li><a href="<?php echo base_url(); ?>interior" class="active">Exterior</a></li>
+                <li><a href="<?php echo base_url(); ?>exterior" class="active">Exterior</a></li>
             </ul>
             <h2>Choose your <span>Brand Model</span></h2>
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search Brand">
+                <input type="text" id="searchInputExterior" placeholder="Search Exterior Brands Or Models">
                 <i class="fas fa-search"></i>
             </div>
         </div>
@@ -32,7 +32,7 @@
             <i class="fa-solid fa-left-long"></i>
         </div>
 
-        <div class="row all-brands" id="brandList">
+        <div class="row all-brands" id="defaultList">
             <?php 
             if (!empty($brands)) {
                 // ✅ Sort brands alphabetically by name
@@ -58,6 +58,7 @@
                 <p class="text-center">No brands available in interior category.</p>
             <?php } ?>
         </div>
+        <div class="row all-brands" id="searchResults" style="display:none;"></div>
     </div>
 </section>
 

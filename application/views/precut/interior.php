@@ -22,7 +22,7 @@
             </ul>
             <h2>Choose your <span>Brand Model</span></h2>
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search Brand">
+                <input type="text" id="searchInputInterior" placeholder="Search Interior Brand Or Model">
                 <i class="fas fa-search"></i>
             </div>
         </div>
@@ -32,10 +32,9 @@
             <i class="fa-solid fa-left-long"></i>
         </div>
 
-        <div class="row all-brands" id="brandList">
+        <div class="row all-brands" id="defaultList">
             <?php 
             if (!empty($brands)) {
-                // ✅ Sort brands alphabetically by name
                 usort($brands, function ($a, $b) {
                     return strcmp(strtolower($a->name), strtolower($b->name));
                 });
@@ -59,6 +58,7 @@
             <?php } ?>
             
         </div>
+        <div class="row all-brands" id="searchResults" style="display:none;"></div>
     </div>
 </section>
 

@@ -36,7 +36,8 @@ a {
     justify-content: center;
     border-bottom: 2px solid white;
     padding-bottom: 5px;
-    width: 45%;
+    width: auto;
+    max-width: 60%;
     margin: auto;
     padding-left: 0rem;
 }

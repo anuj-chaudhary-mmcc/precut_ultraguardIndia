@@ -80,21 +80,24 @@
                <label>Upload New Images (if any)</label>
                <input type="file" name="images[]" multiple accept="image/*">
             </div>
-                  <div class="col-md-12 form-item">
-                        <label>Uploaded Images:</label><br>
-                        <?php if (!empty($feature->images)): ?>
-                           <?php foreach ($feature->images as $img): ?>
-                              <div class="uploaded-image">
-                               <img src="<?= base_url('assets/images/brand-model/' . htmlspecialchars($img->image_path)) ?>" alt="Feature Image">
+             <div class="col-md-6 form-item">
+               <label>Price:</label>
+               <input type="text" name="price" value="<?php echo isset($feature->price) ? $feature->price : ''; ?>">
+            </div>
+            <div class="col-md-6 form-item">
+               <label>Uploaded Images:</label><br>
+               <?php if (!empty($feature->images)): ?>
+                  <?php foreach ($feature->images as $img): ?>
+                     <div class="uploaded-image">
+                        <img src="<?= base_url('assets/images/brand-model/' . htmlspecialchars($img->image_path)) ?>" alt="Feature Image">
 
-                                 <a class="delete-image" href="<?php echo base_url('admin/feature-image-delete/' . $img->id . '/' . $feature->id); ?>" onclick="return confirm('Delete this image?')">&times;</a>
-                              </div>
-                           <?php endforeach; ?>
-                        <?php else: ?>
-                           <p>No images uploaded yet.</p>
-                        <?php endif; ?>
+                        <a class="delete-image" href="<?php echo base_url('admin/feature-image-delete/' . $img->id . '/' . $feature->id); ?>" onclick="return confirm('Delete this image?')">&times;</a>
                      </div>
-
+                  <?php endforeach; ?>
+               <?php else: ?>
+                  <p>No images uploaded yet.</p>
+               <?php endif; ?>
+            </div>
 
             <div class="col-md-12 form-item">
                <button type="submit">Update Feature</button>
