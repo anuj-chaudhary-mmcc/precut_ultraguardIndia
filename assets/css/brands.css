@@ -1,0 +1,190 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: black;
+}
+h1, h2, h3, h4, h5, h6 , p , li , a{
+      font-family: 'Metro Police', sans-serif;
+}
+.brands-top{
+    text-align: center;
+}
+.brands-top img{
+   width: 100%;
+    margin-bottom: 1rem;
+}
+.Menu-line ul{
+    display: flex;
+    color: white;
+       justify-content: center;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+        width: 40%;
+          padding-left: 0rem;
+    margin: auto;
+}
+.Menu-line ul li{
+    list-style: none;
+    margin: 0px 5px;
+    font-weight: 700;
+}
+.Menu-line ul li a{
+    text-decoration: none;
+     color: white;
+     font-size: 19px;
+     font-weight: 600;
+     text-transform: math-auto;
+}
+.Menu-line ul li .active{
+    color: red;
+}
+
+.Menu-line h2{
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    text-transform: math-auto;
+    margin-top: 1rem;
+    font-size: 25px;
+}
+.Menu-line h2 span{
+     color: red;
+}
+  .search-container {
+            position: relative;
+          width: 60%;
+    margin: auto;
+    margin-top: 1rem;
+  
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 10px 35px 10px 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: white;
+            border-radius: 100px;
+              padding: 10px 20px;
+        }
+
+        .search-container .fa-search {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: white;
+        }
+
+        .search-container input:focus + .fa-search {
+            display: none;
+        }
+
+        .search-container input:not(:focus) + .fa-search {
+            display: block;
+        }
+        .search-container input::placeholder {
+    color: #ffffff;  /* Change this color as per your preference */
+}
+    
+@media(max-width:999px){
+    .search-container {
+    width: 80%;
+    }
+}
+@media(max-width:768px){
+    .Menu-line ul {
+    width: 80%;
+}
+
+.Menu-line ul li a {
+        font-size: 20px;
+}
+ .search-container {
+    width: 100%;
+    }
+}
+
+@media(max-width:500px){
+       .Menu-line ul {
+    width: 100%;
+}
+.Menu-line h2 {
+        margin-top: 20px;
+    margin-bottom: 20px;
+}
+}
+
+
+/* .all-brands */
+.all-brands{
+    display: flex;
+    margin-top:1rem !important;
+    width: 100% !important;
+    margin-left: 2px !important;
+    margin-bottom: 3rem;
+}
+.all-brands .brand-logo{
+    padding: 0px 5px;
+    margin-top: 10px;
+       transition: 0.4s;
+       width: 20%;
+    
+}
+.all-brands .brand-logo img{
+    width: 100%;
+    border-radius: 10px;
+}
+.all-brands .brand-logo h3{
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 7px;
+        margin-bottom: 0px;
+          transition: 0.4s;
+}
+.all-brands .brand-logo a{
+    text-decoration: none;
+}
+.all-brands .brand-logo:hover h3{
+    color: red;
+    transition: 0.4s;
+}
+
+@media(max-width:999px){
+    .all-brands .brand-logo{
+    width: 33.33%;
+    }
+}
+
+
+
+@media(max-width:500px){
+    .all-brands .brand-logo{
+    width: 50%;
+    }
+
+}
+/* .all-brands close */
+.back-click i {
+  border: 2px solid white;
+    padding: 10px;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+@media(max-width:768px) {
+    .back-click {
+        text-align: center;
+       margin: 25px 0px !important;
+    }
+   .all-brands {
+      margin-top: -13px !important;
+}
+}

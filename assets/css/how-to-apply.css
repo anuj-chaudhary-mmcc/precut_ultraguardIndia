@@ -1,0 +1,197 @@
+ * {
+     margin: 0px;
+     padding: 0px;
+     box-sizing: border-box;
+     background-color: black;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ li,
+ a {
+     font-family: 'Metro Police', sans-serif;
+ }
+
+ .brands-top {
+     text-align: center;
+ }
+
+ .brands-top img {
+     width: 100%;
+     margin-bottom: 1rem;
+ }
+
+ .all-apply {
+     border: 2px solid #ffffff57;
+     width: 95%;
+     margin: auto;
+     padding: 20px;
+     border-radius: 5px;
+     margin-bottom: 30px;
+ }
+
+ .all-apply h2 {
+     color: #ff0000;
+     font-weight: 600;
+ }
+
+ .all-apply h3 {
+     color: #ff0000;
+     font-weight: 600;
+ }
+
+ .all-apply h4 {
+     color: white;
+     font-weight: 600;
+ }
+
+ .all-apply p {
+     color: white;
+     font-size: 15px;
+ }
+
+ .all-apply ul li {
+     color: white;
+ }
+
+
+ /* .all-brands close */
+ .back-click i {
+     border: 2px solid white;
+     padding: 10px;
+     font-size: 30px;
+     color: #ffffff;
+     cursor: pointer;
+     border-radius: 100px;
+ }
+
+ .all-apply .Install {
+     text-align: center;
+ }
+
+ .apply-row .apply-col {
+     padding: 5px;
+ }
+
+ .apply-row {
+     margin-bottom: 1rem;
+ }
+
+ .apply-row .apply-col div {
+     border: 1px solid rgba(255, 255, 255, 0.164);
+     padding: 20px 10px 10px 10px;
+     height: auto;
+     margin-top: 1rem;
+     align-content: center;
+     border-radius: 10px;
+     transition: 0.4s;
+     cursor: pointer;
+ }
+
+ .apply-row .apply-col:hover div {
+     border: 1px solid #ff0000ae;
+     transition: 0.4s;
+     margin-top: 10px;
+ }
+
+ .apply-row .apply-col h4 {
+     color: #ff0000;
+     font-size: 20px;
+     transition: 0.4s;
+     text-align: center;
+     margin-bottom: 17px;
+
+ }
+
+ .apply-row .apply-col:hover h4 {
+     color: white;
+     transition: 0.4s;
+ }
+
+ .apply-row .apply-col h4 span {
+     border: 1px solid #ffffff;
+     padding: 6px 13px;
+     border-radius: 100%;
+ }
+
+ .apply-row .apply-col h5 {
+     color: white;
+     font-size: 18px;
+     font-weight: 500;
+     transition: 0.4s;
+ }
+
+ .apply-row .apply-col:hover h5 {
+     color: #ff0000;
+     transition: 0.4s;
+ }
+
+ .apply-row .apply-col p {
+     font-size: 13px;
+     font-weight: 400;
+     text-align: justify;
+ }
+
+ .Avoid h4 {
+     color: #ff0000;
+     font-size: 21px;
+ }
+
+ .Avoid p {
+     font-size: 13px;
+ }
+
+ .Avoid ul li {
+     font-size: 13px;
+     margin: 3px 0px;
+ }
+
+ .Need h3 {
+     font-size: 21px;
+ }
+
+ .Need ul li {
+     font-size: 13px;
+     margin: 3px 0px;
+ }
+
+ .apply-row h3 {
+     font-size: 21px;
+ }
+
+ .Install p {
+     font-size: 13px;
+ }
+
+ @media(max-width:999px) {
+     .all-apply {
+         width: 100%;
+     }
+ }
+
+ @media(max-width:768px) {
+     .back-click {
+         text-align: center;
+         margin: 25px 0px !important;
+     }
+
+     .all-brands {
+         margin-top: -13px !important;
+     }
+ }
+
+ @media(max-width:500px) {
+     .Install h2 {
+         font-size: 22px;
+     }
+
+     .Install p {
+         text-align: justify;
+     }
+
+ }

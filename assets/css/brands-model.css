@@ -1,0 +1,508 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+a {
+    font-family: 'Metro Police', sans-serif;
+}
+
+.brands-top {
+    text-align: center;
+}
+
+.brands-top img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#searchInput {
+    background-color: black !important;
+}
+
+.Menu-line ul {
+    display: flex;
+    color: white;
+    justify-content: center;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    width: 45%;
+    margin: auto;
+    padding-left: 0rem;
+}
+
+.Menu-line ul li {
+    list-style: none;
+    margin: 0px 5px;
+    font-weight: 700;
+}
+
+.Menu-line ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: math-auto;
+}
+
+.Menu-line ul li .activee {
+    color: red !important;
+}
+
+.Menu-line h2 {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    text-transform: math-auto;
+    margin-top: 1rem;
+    font-size: 25px;
+}
+
+.Menu-line h2 span {
+    color: red;
+}
+
+.search-container {
+    position: relative;
+    width: 60%;
+    margin: auto;
+    margin-top: 1rem;
+
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+    border-radius: 100px;
+    padding: 10px 20px;
+}
+
+.search-container .fa-search {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+}
+
+.search-container input:focus+.fa-search {
+    display: none;
+}
+
+.search-container input:not(:focus)+.fa-search {
+    display: block;
+}
+
+.search-container input::placeholder {
+    color: #ffffff;
+    /* Change this color as per your preference */
+}
+
+@media(max-width:999px) {
+    .search-container {
+        width: 80%;
+    }
+}
+
+@media(max-width:768px) {
+    .Menu-line ul {
+        width: 100%;
+        padding: 5px 0px;
+    }
+
+    .brands-top img {
+        width: 100%;
+    }
+
+    .Menu-line ul li a {
+        font-size: 20px;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+    .tab-row{
+      flex-direction: column-reverse;
+    }
+}
+
+@media(max-width:500px) {
+    .Menu-line ul {
+        width: 100%;
+    }
+
+    .Menu-line h2 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+   
+}
+
+/* tab-row */
+.tab-row {
+    margin-top: 2rem !important;
+}
+
+.tab-row .tab-item2 #imageContainer img {
+    width: 100%;
+
+}
+
+/* tab-row */
+
+
+#imageContainer {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+button {
+    margin: 5px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: red;
+}
+
+.active {
+    background-color: red;
+}
+
+#imageContainer img {
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.tab-item1 {
+    padding: 0px 50px !important;
+    align-content: center;
+}
+
+.tab-item1 button {
+    border: 1px solid white;
+    margin: 6px 0px;
+    text-align: start;
+}
+
+.purchase-now {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.purchase-now a {
+    background-color: red;
+    text-decoration: none;
+    padding: 10px 15px;
+    color: white;
+    margin: 0px 5px;
+}
+
+#imageContainer .number {
+    color: rgb(0, 0, 0);
+    text-align: start;
+    margin-top: -30px;
+}
+
+#imageContainer .number span {
+    background: #d5d5d5;
+    padding: 10px 20px;
+}
+
+#imageContainer p {
+    color: white;
+        margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+/* Simple zoom effect */
+#mainImage {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Zoom modal styles */
+.zoom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoom-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    cursor: pointer;
+}
+
+/* Close button style */
+.zoom-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 4%;
+
+}
+
+/* Zoom Button */
+.zoom-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.8);
+
+}
+
+@media(max-width:999px) {
+    .zoom-close {
+        width: 6%;
+    }
+
+    .tab-item1 {
+        padding: 0px 0px !important;
+    }
+}
+
+@media(max-width:768px) {
+    #imageContainer {
+
+        margin-top: 1rem;
+    }
+
+    .zoom-close {
+        width: 8%;
+    }
+
+    .tab-item1 {
+        padding: 0px 10px !important;
+    }
+}
+
+@media(max-width:500px) {
+    .zoom-close {
+        width: 10%;
+    }
+}
+
+@media(max-width:400px) {
+    .zoom-close {
+        width: 12%;
+    }
+}
+
+
+
+/* Request Quotation */
+.modal {
+    background: #00000054;
+}
+
+.modal-header {
+    background-color: white;
+}
+
+.modal-header h1 {
+    background-color: white !important;
+}
+
+.modal-body {
+    background-color: white !important;
+}
+
+.Quotation-row,
+.Quotation-colum,
+label,
+input,
+select,
+option,
+textarea,
+.Quotatio-top {
+    background-color: white;
+}
+
+.Quotation-row .Quotation-colum {
+    margin: 5px 0px;
+}
+
+.Quotation-row .Quotation-colum input {
+    width: 100%;
+    border: 1px solid #00000078;
+    padding: 7px 8px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.Quotation-row .Quotation-colum label {
+    font-size: 14px;
+}
+
+.Quotation-row .Quotation-colum select {
+    width: 100%;
+    padding: 7px 8px;
+    border-radius: 3px;
+    border: 1px solid #00000078;
+}
+
+.Quotation-row .Quotation-colum textarea {
+    border: 1px solid #00000078;
+    border-radius: 3px;
+}
+
+.Quotation-row .Quotation-colum .Quotatio-top {
+    text-align: end;
+}
+
+.Quotation-row .Quotation-colum .Quotatio-button {
+    background-color: #ff0000;
+    width: 30%;
+}
+
+.back-click i {
+   border: 2px solid white;
+    padding: 10px;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+@media(max-width:768px) {
+    .back-click {
+        text-align: center;
+                margin-top: 27px !important;
+    }
+    .tab-row {
+    margin-top: 0rem !important;
+            margin-bottom: 30px;
+}
+}
+
+
+.swiper-container {
+         width: 100%;
+         height: 490px;
+         }
+         .swiper-slide img {
+         width: 100%;
+         height: auto;
+         object-fit: contain;
+         }
+         /* Styling for the zoom modal */
+         .zoom-modal {
+         display: none;
+         justify-content: center;
+         align-items: center;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.8);
+         }
+         .zoom-modal img {
+         max-width: 90%;
+         max-height: 90%;
+         }
+         /* Default and Active Button Style */
+         .tab-item1 button.active {
+         background-color: red; /* Active button ka color */
+         color: white; /* Text color jab button active ho */
+         }
+         .tab-item2 p{
+         color: white;
+         text-align: center;
+         border: 1px solid #ffffffc7;
+         padding: 10px;
+         }
+         .tab-item2 .swiper .swiper-pagination-clickable .swiper-pagination-bullet {
+         background: white;
+         }
+         .tab-item2 .swiper .swiper-pagination-bullet-active {
+         opacity: var(--swiper-pagination-bullet-opacity, 1);
+         background: #ff0000 !important;
+         }
+         .tab-item2 .swiper .swiper-button-prev, .swiper-rtl .swiper-button-next {
+         background: transparent;
+         }
+         .tab-item2 .swiper .swiper-button-next, .swiper-rtl .swiper-button-prev {
+         background: transparent;
+         }
+         .tab-item2 .swiper .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+         color: red;
+         }
+         .tab-item2 .swiper .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+         color: red;
+         }
+         @media(max-width:1400px){
+             .swiper-container {
+         height: 410px;
+         }
+         }
+          @media(max-width:1200px){
+             .swiper-container {
+         height: 370px;
+         }
+         }
+          @media(max-width:999px){
+             .swiper-container {
+         height: 270px;
+         }
+         }
+          @media(max-width:768px){
+             .swiper-container {
+         height: 400px;
+         }
+             .tab-item1 {
+        margin-top: 2rem;
+    }
+         }
+           @media(max-width:500px){
+             .swiper-container {
+         height: auto;
+         }
+         .tab-item2 .swiper .swiper-wrapper{
+                 margin-bottom: 2rem;
+         }
+         }

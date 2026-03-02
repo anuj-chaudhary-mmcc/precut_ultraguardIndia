@@ -1,0 +1,156 @@
+* {
+    margin: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.active3 {
+    background-color: #df2126;
+}
+
+.sidebar .menu .active3:hover {
+    background-color: #df2126;
+}
+.content .project-url h3{
+        font-weight: 700;
+    color: #000000;
+    border-bottom: 1px solid #00000070;
+    padding-bottom: 6px;
+}
+.content .project-url h3 i{
+    color: #df2126;
+}
+.content .add-new{
+    text-align: end;
+    margin-top: 2rem;
+}
+.content .add-new .button{
+    background: #df2126;
+    padding: 8px 20px;
+    border-radius: 100px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+}
+.form-item label{
+        display: block;
+}
+.form-item input , .form-item select{
+        width: 80%;
+    padding: 9px 10px;
+    border-radius: 5px;
+    border: 1px solid #00000066;
+}
+.form-item {
+    margin-top: 1rem !important;
+}
+.form-section{
+    margin-top: 1rem;
+}
+.form-item button{
+     background: #df2126;
+         color: white;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 5px;
+}
+
+
+.table {
+    margin: inherit;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 2rem;
+}
+.table thead tr th {
+    padding: 10px 20px;
+    font-size: 13px;
+    background-color: #FF0000;
+    color: white;
+    border: 1px solid #000;
+}
+.table tbody tr td{
+        padding: 10px 20px;
+           border: 1px solid #000;
+}
+.table tbody tr td ul{
+  display: flex;
+      padding-left: 0px;
+          justify-content: center;
+}
+.table tbody tr td ul li{
+      margin: 0px 5px;
+    list-style: none;
+}
+.table tbody tr td ul li a i{
+    color: #df2126;
+}
+.table tbody tr td{
+    text-align: center;
+        align-content: center;
+}
+.table tbody tr td img{
+       width: 35%;
+}
+
+.search-form{
+    margin-top: 2rem;
+}
+
+.search-form form{
+    width: 100%;
+    justify-content: end;
+}
+.search-form form input{
+    width: 30%;
+}
+
+.select-brad-all{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.brand-card{
+        margin-top: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px 0px;
+}
+
+.brand-card a img{
+    width: 100%;
+}
+.brand-card a{
+        text-decoration: none;
+}
+.brand-card .brand-name{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+
+}
+.brand-card-team{
+      width: 20% !important;
+}
+.content .project-url h4{
+        font-weight: 700;
+    color: #000000;
+}
+
+.content .project-url h4 span{
+        color: #df2126;
+}
+.top-header img{
+       width: 50%;
+}
+.green-edite{
+        color: green;
+}
+.red-delete {
+    color: #df2126;
+}

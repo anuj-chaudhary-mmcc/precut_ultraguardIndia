@@ -1,0 +1,5 @@
+[09-Jul-2025 11:32:15 UTC] PHP Fatal error:  Cannot redeclare Admin::logout() in /home/v4ghn3pes60g/public_html/precut.ultraguardindia.com/application/controllers/Admin.php on line 51
+[09-Jul-2025 11:32:21 UTC] PHP Fatal error:  Cannot redeclare Admin::logout() in /home/v4ghn3pes60g/public_html/precut.ultraguardindia.com/application/controllers/Admin.php on line 51
+[10-Jul-2025 09:57:32 UTC] PHP Fatal error:  Cannot redeclare Precut::model_features() in /home/v4ghn3pes60g/public_html/precut.ultraguardindia.com/application/controllers/Precut.php on line 63
+[10-Jul-2025 10:03:08 UTC] PHP Fatal error:  Cannot redeclare Precut::all_models() in /home/v4ghn3pes60g/public_html/precut.ultraguardindia.com/application/controllers/Precut.php on line 48
+[11-Jul-2025 05:09:23 UTC] PHP Fatal error:  Cannot use temporary expression in write context in /home/v4ghn3pes60g/public_html/precut.ultraguardindia.com/application/config/routes.php on line 117

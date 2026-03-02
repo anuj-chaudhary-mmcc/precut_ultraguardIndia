@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #000000;
+  color: white;
+  position: fixed;
+  height: 100%;
+  padding-top: 20px;
+  overflow-y: auto; /* This makes the sidebar scrollable */
+}
+
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sidebar img {
+  width: 70%;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+}
+
+
+.sidebar .menu li:hover {
+  background-color: #444;
+}
+
+.main-content {
+  margin-left: 250px; /* Shifting content to the right to make room for the sidebar */
+  background-color: #f4f4f4;
+  width: 100%;
+  padding: 0px;
+  overflow-y: auto;
+}
+
+.header {
+display: flex;
+       justify-content: space-between;
+    padding: 10px 30px;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    box-shadow: none;
+    margin-bottom: 0px;
+}
+
+.profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-icon {
+     width: 50px;
+    height: 50px;
+  border-radius: 50%;
+}
+
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #33333300;
+  color: white;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.profile-dropdown a:hover {
+  background-color: #444;
+}
+
+.content {
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+.sidebar-menu .active{
+    text-decoration: none;
+    color: white;
+    font-weight:600;
+    font-size: 15px;
+}
+.sidebar-menu .active span{
+    margin-left: 5px;
+}
+.sidebar-menu{
+        padding: 10px 15px;
+    text-align: start;
+    cursor: pointer;
+      margin: 5px 0px;
+}
+
+.sidebar .menu li:hover {
+  background-color: #444;
+}
+.logout{
+     display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 100pc;
+        background-color: red;
+        text-align: center;
+}
+.profile{
+    font-weight: 700;
+    color:  #df2126;
+}
+.topbar-form{
+        width: 60%;
+}
+.topbar-form input{
+        border: 1px solid #00000052;
+    border-radius: 100px;
+    padding: 10px 20px;
+}
+.topbar-form input:focus {
+    border-color: #00000052;
+    outline: 0;
+        box-shadow: none !important;
+}
