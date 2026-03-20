@@ -553,7 +553,6 @@ public function features_update($id)
             'feature_name' => $this->input->post('feature_name'),
             'part_code'    => $this->input->post('part_code'),
             'type'         => $this->input->post('type'),
-            'price'        => $this->input->post('price')
         ];
 
         // Update feature in DB
@@ -578,7 +577,7 @@ public function features_update($id)
             
             $config['upload_path']   = './assets/images/brand-model/';
             $config['allowed_types'] = 'jpg|jpeg|png|gif|webp';
-            $config['max_size']      = 2048;
+            $config['max_size']      = 5012;
             $config['encrypt_name']  = TRUE;
 
             $this->load->library('upload');
@@ -641,7 +640,7 @@ public function features_update($id)
         
         foreach ($features as &$feature) {
             $feature->images = $this->Feature_model->get_images($feature->id);
-            $feature->price = number_format($feature->price, 2, '. ', ',');
+            // $feature->price = number_format($feature->price, 2, '. ', ',');
         }
 
         $data['features'] = $features;

@@ -80,10 +80,10 @@
                <label>Upload New Images (if any)</label>
                <input type="file" name="images[]" multiple accept="image/*">
             </div>
-             <div class="col-md-6 form-item">
-               <label>Price:</label>
-               <input type="text" name="price" value="<?php echo isset($feature->price) ? $feature->price : ''; ?>">
-            </div>
+            <!-- <div class="col-md-6 form-item">-->
+            <!--   <label>Price:</label>-->
+            <!--   <input type="text" name="price" value="<php echo isset($feature->price) ? $feature->price : ''; ?>">-->
+            <!--</div>-->
             <div class="col-md-6 form-item">
                <label>Uploaded Images:</label><br>
                <?php if (!empty($feature->images)): ?>

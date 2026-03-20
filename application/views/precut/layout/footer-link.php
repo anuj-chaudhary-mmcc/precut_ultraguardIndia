@@ -55,7 +55,7 @@
                             html += `<div class="col-md-2 col-4 brand-logo">
                                 <a href="<?php echo base_url('interior/'); ?>${brandSlug}/${modelSlug}">
                                     ${imgSrc ? `<img src="${imgSrc}" width="100">` : '<span>No image</span>'}
-                                    <h3>${model.brand_name} ${model.model_name}</h3>
+                                    <h3>${model.model_name}</h3>
                                 </a>
                             </div>`;
                         });
