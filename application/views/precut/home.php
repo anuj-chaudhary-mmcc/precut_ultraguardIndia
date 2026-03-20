@@ -26,7 +26,7 @@
                 <h1>Choose you <span>Pre-cut</span> Type</h1>
                 <div class="row precut-item-row">
                     <div class="col-md-6 precut-item">
-                        <a href="<?php echo base_url();?>interior"><img src="<?php echo base_url();?>assets/images/precut-home/interior.png" alt=""></a>
+                        <a href="<?= base_url('interior') ?>"><img src="<?php echo base_url();?>assets/images/precut-home/interior.png" alt=""></a>
                         <a href="<?php echo base_url();?>interior"><h2>Interior</h2></a>
                        
                     </div>

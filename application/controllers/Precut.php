@@ -278,7 +278,7 @@ class Precut extends CI_Controller
         $keyword = $this->input->get('keyword');
         
         if (strlen($keyword) < 1) {
-            echo json_encode(['brands' => [], 'models' => []]);
+            echo json_encode(['brands' => [], 'models' => [], 'features' => []]);
             return;
         }
 
@@ -300,7 +300,16 @@ class Precut extends CI_Controller
         $this->db->group_by('models.id');
         $models = $this->db->get()->result();
 
-        echo json_encode(['brands' => $brands, 'models' => $models]);
+        $this->db->select('features.id, features.name, features.model_id, models.model_name, models.id as model_id, brands.name as brand_name, (SELECT image_path FROM feature_images WHERE feature_id = features.id LIMIT 1) as feature_image');
+        $this->db->from('features');
+        $this->db->join('models', 'models.id = features.model_id');
+        $this->db->join('brands', 'brands.id = models.brand_id');
+        $this->db->where('features.type', 'interior');
+        $this->db->like('features.name', $keyword);
+        $this->db->group_by('features.id');
+        $features = $this->db->get()->result();
+
+        echo json_encode(['brands' => $brands, 'models' => $models, 'features' => $features]);
     }
 
     // to search exterior brand or models names from exterior brand listing page
@@ -309,7 +318,7 @@ class Precut extends CI_Controller
         $keyword = $this->input->get('keyword');
         
         if (strlen($keyword) < 1) {
-            echo json_encode(['brands' => [], 'models' => []]);
+            echo json_encode(['brands' => [], 'models' => [], 'features' => []]);
             return;
         }
 
@@ -331,6 +340,15 @@ class Precut extends CI_Controller
         $this->db->group_by('models.id');
         $models = $this->db->get()->result();
 
-        echo json_encode(['brands' => $brands, 'models' => $models]);
+        $this->db->select('features.id, features.name, features.model_id, models.model_name, models.id as model_id, brands.name as brand_name, (SELECT image_path FROM feature_images WHERE feature_id = features.id LIMIT 1) as feature_image');
+        $this->db->from('features');
+        $this->db->join('models', 'models.id = features.model_id');
+        $this->db->join('brands', 'brands.id = models.brand_id');
+        $this->db->where('features.type', 'exterior');
+        $this->db->like('features.name', $keyword);
+        $this->db->group_by('features.id');
+        $features = $this->db->get()->result();
+
+        echo json_encode(['brands' => $brands, 'models' => $models, 'features' => $features]);
     }
 }

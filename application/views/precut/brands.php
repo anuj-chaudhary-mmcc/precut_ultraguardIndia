@@ -33,7 +33,7 @@
                </ul>
                <h2>Select Your <span>Car Model</span></h2>
                <div class="search-container">
-                  <input type="text" id="searchInput" placeholder="Search <?php echo isset($brand) && $brand ? $brand->name . ' Models' : 'Models'; ?>">
+                  <input type="text" id="searchInputInterior" placeholder="Search Interior Brand Or Model">
                   <i class="fas fa-search"></i>
                </div>
             </div>
@@ -43,7 +43,7 @@
                <i class="fa-solid fa-left-long"></i>
             </div>
 
-            <div class="row all-brands">
+            <div class="row all-brands" id="defaultList">
                <?php
                   // ✅ Sort models alphabetically
                   if (!empty($models)) {
@@ -76,6 +76,7 @@
                   <p>No models found under this brand.</p>
                <?php endif; ?>
             </div>
+            <div class="row all-brands" id="searchResults" style="display:none;"></div>
          </div>
       </section>
       <?php include_once('layout/footer-link.php'); ?>

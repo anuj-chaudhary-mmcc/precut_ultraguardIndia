@@ -49,13 +49,25 @@
                         });
                         
                         data.models.forEach(model => {
-                            let imgSrc = model.brand_image ? '<?php echo base_url("assets/images/brand-model/"); ?>' + model.image : '';
+                            let imgSrc = model.brand_image ? '<?php echo base_url("assets/images/brands/"); ?>' + model.brand_image : '';
                             let brandSlug = model.brand_name.toLowerCase().replace(/ /g, '-');
                             let modelSlug = model.model_name.toLowerCase().replace(/ /g, '-');
                             html += `<div class="col-md-2 col-4 brand-logo">
                                 <a href="<?php echo base_url('interior/'); ?>${brandSlug}/${modelSlug}">
                                     ${imgSrc ? `<img src="${imgSrc}" width="100">` : '<span>No image</span>'}
                                     <h3>${model.model_name}</h3>
+                                </a>
+                            </div>`;
+                        });
+
+                        data.features.forEach(feature => {
+                            let featureImg = feature.feature_image ? '<?php echo base_url("assets/images/brand-model/"); ?>' + feature.feature_image : '';
+                            let brandSlug = feature.brand_name.toLowerCase().replace(/ /g, '-');
+                            let modelSlug = feature.model_name.toLowerCase().replace(/ /g, '-');
+                            html += `<div class="col-md-2 col-4 brand-logo">
+                                <a href="<?php echo base_url('interior/'); ?>${brandSlug}/${modelSlug}">
+                                    ${featureImg ? `<img src="${featureImg}" width="100">` : '<span>No image</span>'}
+                                    <h3>${feature.name}</h3>
                                 </a>
                             </div>`;
                         });
@@ -78,7 +90,7 @@
             clearTimeout(searchTimeout);
             let keyword = this.value.trim();
             
-            if (keyword.length < 1) {
+            if (keyword.length < 2) {
                 document.getElementById('defaultList').style.display = 'flex';
                 document.getElementById('searchResults').style.display = 'none';
                 return;
@@ -94,7 +106,7 @@
                             let imgSrc = brand.brand_image ? '<?php echo base_url("assets/images/brands/"); ?>' + brand.brand_image : '';
                             let brandSlug = brand.brand_name.toLowerCase().replace(/ /g, '-');
                             html += `<div class="col-md-2 col-4 brand-logo">
-                                <a href="<?php echo base_url('interior/'); ?>${brandSlug}">
+                                <a href="<?php echo base_url('exterior/'); ?>${brandSlug}">
                                     ${imgSrc ? `<img src="${imgSrc}" width="100">` : '<span>No image</span>'}
                                     <h3>${brand.brand_name}</h3>
                                 </a>
@@ -102,13 +114,25 @@
                         });
                         
                         data.models.forEach(model => {
-                            let imgSrc = model.brand_image ? '<?php echo base_url("assets/images/brand-model/"); ?>' + model.image : '';
+                            let imgSrc = model.brand_image ? '<?php echo base_url("assets/images/models/"); ?>' + model.model_image : '';
                             let brandSlug = model.brand_name.toLowerCase().replace(/ /g, '-');
                             let modelSlug = model.model_name.toLowerCase().replace(/ /g, '-');
                             html += `<div class="col-md-2 col-4 brand-logo">
-                                <a href="<?php echo base_url('interior/'); ?>${brandSlug}/${modelSlug}">
+                                <a href="<?php echo base_url('exterior/'); ?>${brandSlug}/${modelSlug}">
                                     ${imgSrc ? `<img src="${imgSrc}" width="100">` : '<span>No image</span>'}
                                     <h3>${model.brand_name} ${model.model_name}</h3>
+                                </a>
+                            </div>`;
+                        });
+
+                        data.features.forEach(feature => {
+                            let featureImg = feature.feature_image ? '<?php echo base_url("assets/images/brand-model/"); ?>' + feature.feature_image : '';
+                            let brandSlug = feature.brand_name.toLowerCase().replace(/ /g, '-');
+                            let modelSlug = feature.model_name.toLowerCase().replace(/ /g, '-');
+                            html += `<div class="col-md-2 col-4 brand-logo">
+                                <a href="<?php echo base_url('exterior/'); ?>${brandSlug}/${modelSlug}">
+                                    ${featureImg ? `<img src="${featureImg}" width="100">` : '<span>No image</span>'}
+                                    <h3>${feature.name}</h3>
                                 </a>
                             </div>`;
                         });
